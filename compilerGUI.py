@@ -9,6 +9,12 @@ LARGE_FONT = ('Arial', 20, 'bold')
 
 
 def check_nesting(program):
+    """
+    Checks nesting of a java program
+    input:
+    program(str): Java program
+    returns: None
+    """
     programSymbols = []
     symbols = ['{', '}', '(', ')', '[', ']']
     symbolTuples = [('{', '}'), ('(', ')'), ('[', ']'), ('<', '>')]
@@ -32,6 +38,10 @@ def check_nesting(program):
 
 
 def browse_files():
+    """
+    Implements file browsing functionality
+    returns: None
+    """
     try:
         filename = filedialog.askopenfilename(initialdir='/', title='Select a file',
                                               filetypes=(('Text files', '*.txt'), ('all files', '*.*')))
@@ -53,7 +63,6 @@ def browse_files():
         file.close()
 
     check_nesting(java_program)
-    print(java_program)
 
 
 root = tk.Tk()
